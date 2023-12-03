@@ -22,3 +22,11 @@ For example, to run the solution for Day 1 - Part 1:
 ```
 go run main.go 1 1 input.txt
 ```
+
+## Solved challenges
+
+| Day | Part 1 | Part 2 |
+|:---:|:------:|:------:|
+|  1  |    ★   |    ★   |
+|  2  |        |        |
+|  3  |        |        |
