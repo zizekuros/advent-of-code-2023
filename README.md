@@ -15,10 +15,10 @@ Welcome to my repository for the Advent of Code 2023 solutions! This is my first
 Each day's solution is stored in its own directory under the days folder. To run a solution for a specific day, use the following command from the root of the project:
 
 ```
-go run main.go <day number>
+go run main.go <day number> <part> <input file>
 ```
 
-For example, to run the solution for Day 1:
+For example, to run the solution for Day 1 - Part 1:
 ```
-go run main.go 1
+go run main.go 1 1 input.txt
 ```
