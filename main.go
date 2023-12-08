@@ -6,6 +6,7 @@ import (
 	"strconv"
 
 	day01 "github.com/zizekuros/advent-of-code-2023/days/day01"
+	day02 "github.com/zizekuros/advent-of-code-2023/days/day02"
 )
 
 func main() {
@@ -29,6 +30,8 @@ func main() {
 	switch day {
 	case 1:
 		day01.Solve(part, os.Args[3])
+	case 2:
+		day02.Solve(part, os.Args[3])
 	default:
 		fmt.Printf("Day %d not implemented yet\n", day)
 	}
