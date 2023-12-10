@@ -10,7 +10,7 @@ import (
 
 func Solve(part int, filePath string) {
 
-	if part != 1 {
+	if part < 1 || part > 2 {
 		fmt.Printf("Invalid part number: %v\n", part)
 		os.Exit(1)
 	}
@@ -26,6 +26,7 @@ func Solve(part int, filePath string) {
 	blueCubes := 14
 
 	sumOfPossibleGames := 0
+	sumOfPower := 0
 
 	lines := strings.Split(string(content), "\n")
 
@@ -60,12 +61,15 @@ func Solve(part int, filePath string) {
 
 		if redCount > 0 || greenCount > 0 || blueCount > 0 {
 			if redCount <= redCubes && greenCount <= greenCubes && blueCount <= blueCubes {
-				fmt.Printf("Game %v is possible\n", gameID)
 				sumOfPossibleGames += gameID
 			}
+			sumOfPower += redCount * greenCount * blueCount
 		}
-
 	}
 
-	fmt.Println(sumOfPossibleGames)
+	if part == 1 {
+		fmt.Println(sumOfPossibleGames)
+	} else {
+		fmt.Println(sumOfPower)
+	}
 }
