@@ -8,6 +8,7 @@ import (
 	day01 "github.com/zizekuros/advent-of-code-2023/days/day01"
 	day02 "github.com/zizekuros/advent-of-code-2023/days/day02"
 	day03 "github.com/zizekuros/advent-of-code-2023/days/day03"
+	day04 "github.com/zizekuros/advent-of-code-2023/days/day04"
 )
 
 func main() {
@@ -36,6 +37,8 @@ func main() {
 		day02.Solve(part, os.Args[3])
 	case 3:
 		day03.Solve(part, os.Args[3])
+	case 4:
+		day04.Solve(part, os.Args[3])
 	default:
 		fmt.Printf("Day %d not implemented yet\n", day)
 	}

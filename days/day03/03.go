@@ -18,6 +18,11 @@ func Solve(part int, filePath string) {
 		os.Exit(1)
 	}
 
+	if part == 2 {
+		fmt.Println("Part 2 not implemented yet")
+		os.Exit(1)
+	}
+
 	content, err := os.ReadFile(filePath)
 	if err != nil {
 		fmt.Println("Error reading file:", err)
