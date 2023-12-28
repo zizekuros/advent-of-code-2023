@@ -22,10 +22,13 @@ func Solve(part int, filePath string) {
 
 	lines := strings.Split(string(content), "\n")
 	sum := 0
+	var wonCopies []int
 
-	for _, line := range lines {
+	for i, line := range lines {
 
 		lineSum := 0
+
+		line = strings.ReplaceAll(line, "\n", " \n")
 
 		index := strings.Index(line, ":")
 		trimmedText := line[index+1:]
@@ -38,15 +41,32 @@ func Solve(part int, filePath string) {
 					lineSum += 1
 				}
 			}
+			if part == 2 {
+				foundCopies := findCopies(wonCopies, (i + 1))
+				if lineSum > 0 {
+
+					for j := 1; j <= lineSum; j++ {
+						wonCopy := (i + 1) + j
+						for k := 1; k <= (foundCopies + 1); k++ {
+							wonCopies = append(wonCopies, wonCopy)
+						}
+					}
+
+				}
+			}
 		}
 
-		if lineSum > 0 {
+		if lineSum > 0 && part == 1 {
 			linePow := int(math.Pow(2, float64((lineSum - 1))))
 			sum += linePow
 		}
 	}
 
-	fmt.Println(sum)
+	if part == 1 {
+		fmt.Println(sum)
+	} else if part == 2 {
+		fmt.Println(len(wonCopies) + (len(lines) - 1))
+	}
 
 }
 
@@ -57,4 +77,14 @@ func checkWinningCard(list []string, card string) bool {
 		}
 	}
 	return false
+}
+
+func findCopies(list []int, card int) int {
+	sum := 0
+	for _, item := range list {
+		if card == item {
+			sum++
+		}
+	}
+	return sum
 }
